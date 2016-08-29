@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="script/notification.js"></script>
+</head>
+<body>
+<audio type="audio/wav" autoplay id="player"></audio>
+<form>
+    <input type="text" id="text" value="Example text">
+    <input type="button" id="add" value="Add">
+    <input type="button" id="clear" value="Clear">
+</form>
+
+
+<section class="notifications">
+</section>
+
+<script>
+    $("#add").click(function () {
+        createNotify("icons/onedrive.png", "Some text");
+        createNotify("icons/green.png", "Some text", "green");
+        createNotify("icons/warn.png", "Some text", "red");
+    });
+    $("#clear").click(function () {
+        hideAll();
+    });
+</script>
+</body>
+</html>
